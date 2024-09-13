@@ -7,6 +7,11 @@ export const Header = () => {
     return (
         <header>
             <span className="logo">HomeNest</span>
+            <div className="pages">
+                <a className="pageItem">Главная</a>
+                <a className="pageItem">Избранное</a>
+                <a className="pageItem">Профиль</a>
+            </div>
             {isSignedIn && <UserButton />}        
         </header>
     )
