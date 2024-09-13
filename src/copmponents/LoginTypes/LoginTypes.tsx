@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Paragraph, Span } from "../UI";
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton } from "@clerk/clerk-react";
 
 interface IRegistrationInfo {
   linkText: string;
@@ -22,10 +22,10 @@ const LoginTypes = ({
       </Span>
       <Paragraph>{authWithText}</Paragraph>
       <div className="icons">
-      <SignInButton
+      <SignInButton forceRedirectUrl={"/main"}
           children={
             <Link className="reg__link google-link" to="#">
-              <img src="./img/icons/google.svg" alt="Google" />
+              <img src="/google.svg" alt="Google" />
             </Link>
           }
         />

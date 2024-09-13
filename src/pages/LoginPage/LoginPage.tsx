@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import LoginTypes from "../../copmponents/LoginTypes/LoginTypes";
 import { Heading, LoginInputs } from "../../copmponents/UI";
 import { SCLoginPage } from "./LoginPage.styled";

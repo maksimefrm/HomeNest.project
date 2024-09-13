@@ -100,7 +100,7 @@ const RegisterInputs = () => {
             />
           )}
         />
-        <Button text={"Войти"} type={"submit"} />
+        <Button text={"Зарегистрироваться"} type={"submit"} />
       </div>
     </form>
   );

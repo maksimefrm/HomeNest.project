@@ -1,5 +1,7 @@
+import { Children } from "react";
+
 interface IButton {
-    text: string,
+    text: any,
     type: "submit" | "reset" | "button" | undefined,
     disabled?: boolean,
     onClick?: () => void
