@@ -2,6 +2,7 @@ import { Button, Input } from "../UI";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 interface IRegisterInputs {
   email: string;
@@ -43,7 +44,16 @@ const RegisterInputs = () => {
       city: "",
     }
   });
-  const onSubmit: SubmitHandler<IRegisterInputs> = (data) => console.log(data);
+
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<IRegisterInputs> = (data) => {
+    localStorage.setItem("userEmail", data.email);
+    localStorage.setItem("userPassword", data.password);
+    localStorage.setItem("userName", data.name);
+    localStorage.setItem("userCity", data.city);
+    navigate("/main");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

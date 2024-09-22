@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SCMainPage = styled.div`
+export const SCCardPage = styled.div`
   * {
     padding: 0;
     margin: 0;
@@ -13,7 +13,6 @@ export const SCMainPage = styled.div`
     background-color: var(--bgc);
     color: var(--text-color);
   }
-
 
   a {
     text-decoration: none;
@@ -28,7 +27,6 @@ export const SCMainPage = styled.div`
       color: ${(props) => props.theme.colors.primeColor};
     }
   }
-
 
 .loader {
   font-weight: bold;
@@ -49,22 +47,6 @@ export const SCMainPage = styled.div`
 }
 @keyframes l11 {100%{transform: translateY(calc(var(--s,1)*0.1%));}}
 
-
-  input {
-    padding: 12px 15px;
-    width: 300px;
-    border-radius: 10px;
-    border: 2px solid;
-    border-color: var(--prime-color);
-
-    transition: 200ms;
-
-    &:is(:hover, :focus) {
-      border: 2px solid ${(props) => props.theme.colors.primeColor};
-      box-shadow: 0px 0px 5px 0px ${(props) => props.theme.colors.darkPrime};
-    }
-  }
-
   img {
     width: 70px;
     object-fit: cover;
@@ -75,45 +57,13 @@ export const SCMainPage = styled.div`
     }
   }
 
-  .icons {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-  }
-  .inputs {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    gap: 30px;
-  }
   .logo {
     font-size: 70px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: ${(props) => props.theme.colors.textColor};
-    display: flex;
   }
-
-.letter {
-    display: inline-block;
-    animation: fadeColor 10s infinite; /* Анимация длится 2 секунды и повторяется бесконечно */
-}
-
-@keyframes fadeColor {
-    0% {
-        color: gray; /* Исходный цвет */
-        opacity: 1;
-    }
-    50% {
-        color: ${(props) => props.theme.colors.textColor}; /* Цвет при анимации */
-    }
-    100% {
-        color: gray; /* Возврат к исходному цвету */
-        opacity: 1;
-    }
-}
 
   header {
     display: flex;
@@ -139,19 +89,13 @@ export const SCMainPage = styled.div`
 
   .card {
     font-family: Arial, sans-serif;
-    max-width: 600px;
+    width: 800px;
     border: 1px solid #ddd;
     border-radius: 15px;
     margin-bottom: 30px;
     margin-left: 30px;
+    margin-top: 30px;
     display: inline-block;
-    transition: 200ms;
-
-    &:hover {
-    translate: 0 -5px;
-    box-shadow: 0px 0px 20px 0px ${(props) => props.theme.colors.darkPrime};
-    border: 1px solid ${(props) => props.theme.colors.primeColor};
-  }
   }
 
   .imgIcon img {
@@ -173,8 +117,8 @@ export const SCMainPage = styled.div`
   }
 
   .price {
-    margin: 5px 0px;
-    font-size: 24px;
+    margin: 20px 0px;
+    font-size: 36px;
     font-weight: 700;
     color: #333333;
   }
@@ -184,17 +128,34 @@ export const SCMainPage = styled.div`
     color: #666666;
   }
 
+  .description {
+    margin: 30px 0;
+  }
+
   .address {
     font-size: 14px;
     color: #666666;
     margin-top: 10px;
   }
 
+  .class {
+    margin: 20px 0px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333;
+  }
+  .contacts {
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  .number {
+    display: block;
+    margin: 3px;
+  }
+
   .fav {
     background-color: white;
-    padding: auto;
-    width: 50px;
-    height: 50px;
+    padding: 13px;
     border-radius: 35px;
     border: 1px solid #ddd;
     position: absolute;
@@ -210,9 +171,9 @@ export const SCMainPage = styled.div`
 
   .imgIcon {
     position: relative;
-    width: 100%;
-    height: 200px; 
-    overflow: hidden; 
+    width: 100%; /* Ширина на всю карточку */
+    height: 500px; /* Задаем фиксированную высоту */
+    overflow: hidden; /* Обрезаем изображение, если оно превышает размеры контейнера */
   }
 
   .list-with-cards {
@@ -223,10 +184,10 @@ export const SCMainPage = styled.div`
     gap: 30px;
   }
 
-  /* @media (max-width: 730px) {
+  @media (max-width: 730px) {
     input,
     button {
       padding: 10px 12px;
     }
-  } */
+  }
 `;

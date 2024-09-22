@@ -1,11 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const API_KEY = '5e1a11f8dcmsh72d27566c729e7cp189e12jsnfb2763e9a807'; // Замени на твой RapidAPI ключ
+import { API_KEY, baseUrl } from '../../constants';
 
 export const realEstateApi = createApi({
     reducerPath: 'realEstateApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://bayut.p.rapidapi.com',
+        baseUrl: baseUrl,
         prepareHeaders: (headers) => {
             headers.set('X-RapidAPI-Host', 'bayut.p.rapidapi.com');
             headers.set('X-RapidAPI-Key', API_KEY);
@@ -16,6 +15,7 @@ export const realEstateApi = createApi({
         getProperties: builder.query({
             query: () => ({
                 url: '/properties/list',
+                method: "GET",
                 params: {
                     locationExternalIDs: '5002',
                     purpose: 'for-sale',
@@ -25,6 +25,7 @@ export const realEstateApi = createApi({
                 },
             }),
         }),
+        
     }),
 });
 

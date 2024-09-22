@@ -2,6 +2,7 @@ import { Button, Input } from "../UI";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 interface ILoginInputs {
   email: string;
@@ -21,6 +22,7 @@ const schema = yup
   })
   .required();
 
+
 const LoginInputs = () => {
   const {
     control,
@@ -33,12 +35,12 @@ const LoginInputs = () => {
       password: "",
     }
   });
+  const navigate = useNavigate();
+
   const onSubmit: SubmitHandler<ILoginInputs> = (data) => {
-    // registerUser({
-    //   email: data.email,
-    //   password: data.password,
-    // });
-    // navigate("/");
+    localStorage.setItem("userEmail", data.email);
+    localStorage.setItem("userPassword", data.password);
+    navigate("/main");
   };
 
   return (
@@ -76,4 +78,4 @@ const LoginInputs = () => {
   );
 };
 
-export default LoginInputs;
+export default LoginInputs

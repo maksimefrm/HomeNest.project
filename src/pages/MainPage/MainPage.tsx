@@ -1,4 +1,4 @@
-import { Header } from "../../copmponents/Header/Header"
+import { Header } from "../../copmponents/UI/Header/Header"
 import { ListCard } from "../../copmponents/ListCard/ListCard"
 import { SCMainPage } from "./MainPage.styled"
 

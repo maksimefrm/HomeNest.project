@@ -1,5 +1,3 @@
-import { Children } from "react";
-
 interface IButton {
     text: any,
     type: "submit" | "reset" | "button" | undefined,

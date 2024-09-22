@@ -9,6 +9,7 @@ export const SCLoginPage = styled.div`
   width: 80%;
   max-width: 500px;
   text-align: center;
+  justify-content: center;
   padding: 40px;
   display: flex;
   flex-direction: column;
